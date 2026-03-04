@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #ffe6f0; /* baby pink */
+            background-color: #ffe6f0;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
@@ -33,6 +33,12 @@
             max-width: 400px;
         }
 
+        .study-img {
+            width: 140px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
         #countdown {
             font-size: 22px;
             margin-top: 20px;
@@ -45,9 +51,11 @@
 <h1>STUDY BABY 💗</h1>
 
 <div class="card">
+    <!-- Add your image here -->
+    <img src="study.jpeg" alt="Study Baby" class="study-img">
+
     <h2>For Ria 🌸</h2>
-    <p>Your exam is on</p>
-   
+    
 
     <div id="countdown"></div>
 </div>
@@ -56,7 +64,7 @@
 function startCountdown() {
     let now = new Date();
     let year = now.getFullYear();
-    let examDate = new Date(year, 2, 25); // March = 2 (0-based)
+    let examDate = new Date(year, 2, 25); 
 
     if (now > examDate) {
         examDate = new Date(year + 1, 2, 25);
