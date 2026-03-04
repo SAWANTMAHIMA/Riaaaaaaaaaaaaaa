@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Baby :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #ffe6f0; /* baby pink */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            color: #ff4d88;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            background-color: #ff99cc;
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .card {
+            background: white;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(255, 153, 204, 0.3);
+            display: inline-block;
+            max-width: 400px;
+        }
+
+        #countdown {
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>STUDY BABY 💗</h1>
+
+<div class="card">
+    <h2>For Ria 🌸</h2>
+    <p>Your exam is on</p>
+   
+
+    <div id="countdown"></div>
+</div>
+
+<script>
+function startCountdown() {
+    let now = new Date();
+    let year = now.getFullYear();
+    let examDate = new Date(year, 2, 25); // March = 2 (0-based)
+
+    if (now > examDate) {
+        examDate = new Date(year + 1, 2, 25);
+    }
+
+    setInterval(function() {
+        let current = new Date().getTime();
+        let distance = examDate - current;
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            "⏳ " + days + " days " + hours + " hours " +
+            minutes + " minutes " + seconds + " seconds left 💕";
+    }, 1000);
+}
+
+startCountdown();
+</script>
+
+</body>
+</html>
